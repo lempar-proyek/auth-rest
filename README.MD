@@ -6,22 +6,19 @@ This is a login system for authenticating users. All LemparProyek services use t
 
 - [About Project](#lemparproyek-login-system)
 - [List of Contents](#list-of-contents)
-- [Diagrams](#diagrams)
-  - [Use Case Diagram](#use-case-diagram)
-  - [Sequence Diagram](#sequence-diagram)
-    - [Login](#login)
-      - [Local Account](#local-account)
+- [Use Case Diagram](#use-case-diagram)
+- [Login](#login)
+  - [Local Account](#local-account)
+    - [Sequence Diagram](#sequence-diagram)
 
-## Diagrams
-
-### Use Case Diagram
+## Use Case Diagram
 
 ![use-case-diagram](/docs/assets/use-case-login-system.png)
 
-### Sequence Diagram
+## Login
 
-#### Login
+### Local Account
 
-##### Local Account
+#### Sequence Diagram
 
 ![sequence-login-local](/docs/assets/sequence-login-system-rest-login-local.png)
