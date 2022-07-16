@@ -9,3 +9,30 @@ steps:
       go install github.com/revel/cmd/revel@latest
       go mod tidy
       revel test .
+- id: 'Build the container image'
+  dir: login
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/login-rest:staging', '.']
+- id: 'Push the container image to Container Registry'
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/login-rest:staging']
+- id: 'Deploy image to Cloud Run'
+  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args:
+  - 'run'
+  - 'deploy'
+  - 'staging-login-rest'
+  - '--image'
+  - 'gcr.io/$PROJECT_ID/login-rest:staging'
+  - '--region'
+  - 'asia-southeast2'
+  - '--allow-unauthenticated'
+  - '--min-instances'
+  - '0'
+  - '--max-instances'
+  - '1'
+  - '--port'
+  - '9000'
+images:
+- 'gcr.io/$PROJECT_ID/login-rest:staging'
