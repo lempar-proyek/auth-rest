@@ -1,8 +1,2 @@
-# Revel cache
-test-results/
-tmp/
-routes/
-target/
-
 # IDE Configurations
 .vscode
