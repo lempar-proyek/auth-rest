@@ -1,2 +1,6 @@
+test-results/
+tmp/
+routes/
+
 # IDE Configurations
 .vscode
