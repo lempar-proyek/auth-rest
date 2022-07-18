@@ -1,4 +1,4 @@
-module login-rest
+module github.com/lempar-proyek/login-rest/login
 
 go 1.18
 
