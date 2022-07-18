@@ -5,9 +5,13 @@ import (
 )
 
 type App struct {
-	*revel.Controller
+	BaseController
 }
 
 func (c App) Index() revel.Result {
 	return c.Render()
+}
+
+func (c App) NotFound() revel.Result {
+	return c.EndPointNotFound()
 }
